@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المؤسسة الأفريقية للاستيراد | الشركة الهندسية للديزل (أولاد فؤاد)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo for Arabic & Inter for English -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1E293B',
+                            900: '#0F172A',
+                            950: '#090D16',
+                        },
+                        amber: {
+                            500: '#F59E0B',
+                            600: '#D97706',
+                            700: '#B45309',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        html[lang="en"] body {
+            font-family: 'Inter', 'Cairo', sans-serif;
+        }
+        .industrial-grid-bg {
+            background-color: #0F172A;
+            background-image: radial-gradient(rgba(217, 119, 6, 0.15) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.98));
+            background-size: 24px 24px, 100% 100%;
+        }
+        .part-number-font {
+            font-family: 'Inter', monospace;
+            letter-spacing: 0.03em;
+        }
+        /* Print styles for downloadable spec sheets */
+        @media print {
+            body * { visibility: hidden; }
+            #printable-sheet, #printable-sheet * { visibility: visible; }
+            #printable-sheet {
+                display: block !important;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                background: white !important;
+                color: black !important;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- =====================================================================
+         1. TOP UTILITY BAR (Contact & Quick Info)
+         ===================================================================== -->
+    <div class="bg-navy-950 text-slate-300 text-xs sm:text-sm border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+                <a href="tel:+201000000000" id="topbar-phone-link" class="flex items-center gap-1.5 hover:text-amber-500 transition">
+                    <i class="fa-solid fa-phone text-amber-500"></i>
+                    <span dir="ltr" id="topbar-phone-text">+20 100 000 0000</span>
+                </a>
+                <a href="mailto:sales@sbafricanimport.com" id="topbar-email-link" class="hidden md:flex items-center gap-1.5 hover:text-amber-500 transition">
+                    <i class="fa-solid fa-envelope text-amber-500"></i>
+                    <span id="topbar-email-text">sales@sbafricanimport.com</span>
+                </a>
+                <span class="hidden lg:flex items-center gap-1.5 text-slate-400">
+                    <i class="fa-solid fa-location-dot text-amber-500"></i>
+                    <span data-i18n="topbar_address" id="topbar-address-text">القاهرة - جمهورية مصر العربية (توصيل لجميع المحافظات)</span>
+                </span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-amber-500 font-semibold hidden sm:inline" data-i18n="topbar_badge">استيراد وتوزيع جملة وقطاعي</span>
+                <button onclick="openSettingsModal()" title="إعدادات بيانات الشركة / Company Settings" class="text-slate-400 hover:text-amber-500 transition px-2 py-1 rounded bg-navy-900 border border-slate-800 flex items-center gap-1 text-xs">
+                    <i class="fa-solid fa-gear"></i>
+                    <span data-i18n="btn_customize">تعديل البيانات</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         2. MAIN NAVIGATION BAR
+         ===================================================================== -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Dual Brand Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center text-amber-500 shadow-md group-hover:bg-amber-600 group-hover:text-white transition duration-300 shrink-0">
+                        <i class="fa-solid fa-gears text-2xl"></i>
+                    </div>
+                    <div class="leading-tight">
+                        <div class="font-extrabold text-navy-900 text-sm sm:text-base lg:text-lg tracking-tight" data-i18n="brand_primary">
+                            المؤسسة الأفريقية للاستيراد
+                        </div>
+                        <div class="text-xs sm:text-sm font-bold text-amber-600" data-i18n="brand_secondary">
+                            الشركة الهندسية للديزل (أولاد فؤاد)
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-7 font-bold text-sm text-slate-700">
+                    <a href="#home" class="hover:text-amber-600 transition py-2" data-i18n="nav_home">الرئيسية</a>
+                    <a href="#about" class="hover:text-amber-600 transition py-2" data-i18n="nav_about">من نحن</a>
+                    <a href="#products" class="hover:text-amber-600 transition py-2" data-i18n="nav_products">كتالوج المنتجات</a>
+                    <a href="#downloads" class="hover:text-amber-600 transition py-2" data-i18n="nav_downloads">مركز التحميل</a>
+                    <a href="#contact" class="hover:text-amber-600 transition py-2" data-i18n="nav_contact">تواصل معنا</a>
+                </nav>
+
+                <!-- Action Buttons (Language Toggle + Request Quote) -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <button onclick="toggleLanguage()" class="px-3 py-2 rounded-lg border border-slate-300 bg-slate-100 hover:bg-slate-200 text-navy-900 font-bold text-xs sm:text-sm transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-globe text-amber-600"></i>
+                        <span id="lang-toggle-text">English</span>
+                    </button>
+
+                    <a href="#rfq-section" class="hidden sm:inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-lg shadow-sm transition">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <span data-i18n="nav_rfq">اطلب عرض سعر</span>
+                    </a>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-lg text-navy-900 hover:bg-slate-100 border border-slate-200">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-5 space-y-2 shadow-lg">
+            <a href="#home" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg font-bold text-slate-700 hover:bg-slate-100 hover:text-amber-600" data-i18n="nav_home">الرئيسية</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg font-bold text-slate-700 hover:bg-slate-100 hover:text-amber-600" data-i18n="nav_about">من نحن</a>
+            <a href="#products" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg font-bold text-slate-700 hover:bg-slate-100 hover:text-amber-600" data-i18n="nav_products">كتالوج المنتجات</a>
+            <a href="#downloads" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg font-bold text-slate-700 hover:bg-slate-100 hover:text-amber-600" data-i18n="nav_downloads">مركز التحميل</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg font-bold text-slate-700 hover:bg-slate-100 hover:text-amber-600" data-i18n="nav_contact">تواصل معنا</a>
+            <div class="pt-2">
+                <a href="#rfq-section" onclick="toggleMobileMenu()" class="w-full flex justify-center items-center gap-2 bg-amber-600 text-white font-bold py-3 rounded-lg" data-i18n="nav_rfq">اطلب عرض سعر</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         3. HERO SECTION & QUICK PART NUMBER SEARCH
+         ===================================================================== -->
+    <section id="home" class="industrial-grid-bg text-white relative overflow-hidden">
+        <!-- Decorative industrial accent -->
+        <div class="absolute top-0 end-0 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Hero Text & Search -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-600/20 border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-bold">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span data-i18n="hero_badge">SB African Import & Engineering Diesel Co. (Awlad Fouad)</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-white" data-i18n="hero_title">
+                        الريادة في استيراد وتوزيع قطع غيار محركات الديزل والمولدات والمعدات الثقيلة
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl" data-i18n="hero_subtitle">
+                        نوفر أحدث حلول قطع الغيار الأصلية والبديلة عالية الجودة (OEM & Aftermarket) لكبرى العلامات التجارية العالمية: صمامات إيقاف الوقود، الحساسات، منظمات الجهد، وأجزاء المحركات بأفضل الأسعار في مصر.
+                    </p>
+
+                    <!-- Instant Part Number Search Box -->
+                    <div class="bg-white p-2 rounded-2xl shadow-2xl max-w-2xl border border-slate-200">
+                        <form onsubmit="handleHeroSearch(event)" class="flex flex-col sm:flex-row gap-2">
+                            <div class="relative flex-grow flex items-center">
+                                <i class="fa-solid fa-magnifying-glass text-slate-400 absolute start-4"></i>
+                                <input type="text" id="hero-search-input" 
+                                    placeholder="ابحث برقم القطعة (مثال: 1502-12C2U1B2S1, 3034572, AS440)..." 
+                                    data-i18n-placeholder="hero_search_placeholder"
+                                    class="w-full ps-11 pe-4 py-3.5 text-slate-900 placeholder-slate-400 bg-transparent focus:outline-none text-sm sm:text-base font-medium rounded-xl">
+                            </div>
+                            <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-3.5 rounded-xl transition flex items-center justify-center gap-2 shrink-0 shadow-md">
+                                <span data-i18n="hero_search_btn">بحث سريع</span>
+                                <i class="fa-solid fa-arrow-left rtl:rotate-0 ltr:rotate-180"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Quick Tags -->
+                    <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 pt-1">
+                        <span class="font-bold text-slate-300" data-i18n="hero_popular">أرقام شائعة:</span>
+                        <button onclick="quickFilterPart('1502')" class="px-2.5 py-1 rounded bg-navy-800 hover:bg-amber-600 hover:text-white border border-slate-700 transition part-number-font">1502-12C2U1B2S1</button>
+                        <button onclick="quickFilterPart('3034572')" class="px-2.5 py-1 rounded bg-navy-800 hover:bg-amber-600 hover:text-white border border-slate-700 transition part-number-font">3034572</button>
+                        <button onclick="quickFilterPart('AS440')" class="px-2.5 py-1 rounded bg-navy-800 hover:bg-amber-600 hover:text-white border border-slate-700 transition part-number-font">AS440</button>
+                        <button onclick="quickFilterPart('1751ES')" class="px-2.5 py-1 rounded bg-navy-800 hover:bg-amber-600 hover:text-white border border-slate-700 transition part-number-font">1751ES</button>
+                    </div>
+                </div>
+
+                <!-- Hero Right Side: Industrial Feature Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-navy-800/80 backdrop-blur-md border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+                        <div class="flex items-center justify-between border-b border-slate-700 pb-4">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-500" data-i18n="hero_card_tag">تخصصنا الدقيق</span>
+                                <h3 class="text-xl font-extrabold text-white mt-0.5" data-i18n="hero_card_title">حلول متكاملة للمولدات والمعدات</h3>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-amber-600/20 text-amber-500 flex items-center justify-center">
+                                <i class="fa-solid fa-bolt text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-4 text-sm sm:text-base text-slate-200">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-amber-500 mt-1"></i>
+                                <span data-i18n="hero_feat_1">صمامات إيقاف الوقود (Stop Solenoids) 12V & 24V لكافة المحركات</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-amber-500 mt-1"></i>
+                                <span data-i18n="hero_feat_2">حساسات السرعة (Magnetic Pickups) والضغط والحرارة</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-amber-500 mt-1"></i>
+                                <span data-i18n="hero_feat_3">منظمات الجهد (AVR) وكروت التحكم للمولدات الكهربائية</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-amber-500 mt-1"></i>
+                                <span data-i18n="hero_feat_4">مراوح التبريد وقطع غيار محركات الديزل الثقيلة</span>
+                            </li>
+                        </ul>
+
+                        <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                            <a href="#products" class="flex-1 bg-white text-navy-900 hover:bg-slate-100 font-bold py-3 px-4 rounded-xl text-center transition text-sm">
+                                <i class="fa-solid fa-boxes-stacked me-1.5 text-amber-600"></i>
+                                <span data-i18n="hero_btn_catalog">تصفح الكتالوج</span>
+                            </a>
+                            <button onclick="openWhatsAppGeneral()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-center transition text-sm flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span data-i18n="hero_btn_whatsapp">تواصل واتساب</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Supported Brands Strip -->
+        <div class="bg-navy-950/90 border-t border-slate-800 py-5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-slate-400 font-extrabold text-sm sm:text-base tracking-wider uppercase part-number-font">
+                    <span class="text-xs text-amber-500 font-cairo font-bold tracking-normal" data-i18n="brands_label">قطع متوافقة مع:</span>
+                    <span class="hover:text-white transition">CATERPILLAR</span>
+                    <span class="hover:text-white transition">CUMMINS</span>
+                    <span class="hover:text-white transition">DEUTZ</span>
+                    <span class="hover:text-white transition">KUBOTA</span>
+                    <span class="hover:text-white transition">WOODWARD</span>
+                    <span class="hover:text-white transition">SYNCHRO-START</span>
+                    <span class="hover:text-white transition">MECC ALTE</span>
+                    <span class="hover:text-white transition">STAMFORD</span>
+                    <span class="hover:text-white transition">AKEL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         4. INTERACTIVE SPARE PARTS CATALOG SECTION
+         ===================================================================== -->
+    <section id="products" class="py-16 sm:py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-amber-600 font-bold text-sm uppercase tracking-wider" data-i18n="cat_eyebrow">الكتالوج الإلكتروني المتكامل</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-navy-900 mt-1" data-i18n="cat_title">قطع غيار محركات الديزل والمولدات</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base" data-i18n="cat_subtitle">
+                    ابحث برقم القطعة (Part Number) أو اختر التصنيف المناسب لاستعراض المواصفات الفنية وطلب عرض سعر فوري عبر واتساب.
+                </p>
+            </div>
+
+            <!-- Filter & Search Controls -->
+            <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-200 mb-8 space-y-4">
+                <div class="flex flex-col lg:flex-row justify-between gap-4">
+                    <!-- Category Filter Tabs -->
+                    <div class="flex flex-wrap gap-2" id="category-tabs">
+                        <button onclick="setCategory('all')" data-cat="all" class="cat-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-navy-900 text-white transition">
+                            <span data-i18n="cat_all">الكل</span>
+                        </button>
+                        <button onclick="setCategory('solenoids')" data-cat="solenoids" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+                            <span data-i18n="cat_solenoids">صمامات إيقاف الوقود</span>
+                        </button>
+                        <button onclick="setCategory('sensors')" data-cat="sensors" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+                            <span data-i18n="cat_sensors">حساسات السرعة والحرارة</span>
+                        </button>
+                        <button onclick="setCategory('avr')" data-cat="avr" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+                            <span data-i18n="cat_avr">منظمات الجهد والتحكم</span>
+                        </button>
+                        <button onclick="setCategory('engine')" data-cat="engine" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+                            <span data-i18n="cat_engine">مراوح وأجزاء المحرك</span>
+                        </button>
+                    </div>
+
+                    <!-- Live Search Input -->
+                    <div class="relative w-full lg:w-80">
+                        <i class="fa-solid fa-search text-slate-400 absolute start-3.5 top-1/2 -translate-y-1/2"></i>
+                        <input type="text" id="catalog-search" oninput="filterProducts()" 
+                            placeholder="فلترة برقم القطعة أو الماركة..." 
+                            data-i18n-placeholder="cat_search_placeholder"
+                            class="w-full ps-10 pe-4 py-2.5 rounded-xl border border-slate-300 focus:border-amber-600 focus:ring-2 focus:ring-amber-600/20 focus:outline-none text-sm">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Products injected dynamically via JavaScript -->
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="no-products-msg" class="hidden text-center py-12 bg-white rounded-2xl border border-slate-200">
+                <i class="fa-solid fa-magnifying-glass text-4xl text-slate-300 mb-3"></i>
+                <h3 class="text-lg font-bold text-navy-900" data-i18n="no_results_title">لم يتم العثور على قطعة مطابقة</h3>
+                <p class="text-slate-500 text-sm mt-1 mb-4" data-i18n="no_results_desc">لا تقلق! نوفر جميع الأرقام بالطلب المباشر. أرسل لنا رقم القطعة وسنوافيك بالسعر فوراً.</p>
+                <button onclick="openWhatsAppCustomPart()" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span data-i18n="no_results_btn">اسأل عن القطعة عبر واتساب</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         5. ABOUT US & WHY CHOOSE US
+         ===================================================================== -->
+    <section id="about" class="py-16 sm:py-20 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Story & Dual Identity -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-50 text-amber-700 font-bold text-xs border border-amber-200">
+                        <i class="fa-solid fa-award"></i>
+                        <span data-i18n="about_badge">خبرة وثقة في السوق المصري</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-black text-navy-900 leading-tight" data-i18n="about_title">
+                        المؤسسة الأفريقية للاستيراد والشركة الهندسية للديزل (أولاد فؤاد)
+                    </h2>
+
+                    <p class="text-slate-600 leading-relaxed text-base" data-i18n="about_p1">
+                        نحن كيان متخصص في استيراد وتوزيع قطع غيار محركات الديزل، المولدات الكهربائية، والمعدات الثقيلة في جمهورية مصر العربية. نجمع بين قوة الاستيراد المباشر من كبرى المصانع المعتمدة عالمياً وبين الخبرة الهندسية والفنية العميقة لتلبية احتياجات المصانع، شركات المقاولات، مراكز الصيانة، والتجار.
+                    </p>
+
+                    <p class="text-slate-600 leading-relaxed text-base" data-i18n="about_p2">
+                        نلتزم بتوفير قطع الغيار الدقيقة (مثل صمامات الإيقاف، الحساسات المغناطيسية، منظمات الجهد، ومكونات التبريد) بمطابقة تامة للمواصفات القياسية (OEM Specifications) وبأسعار تنافسية للجملة والقطاعي.
+                    </p>
+
+                    <!-- Key Metrics -->
+                    <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-200">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-amber-600 part-number-font">+1000</div>
+                            <div class="text-xs sm:text-sm font-bold text-slate-700 mt-1" data-i18n="stat_1">رقم قطعة متوفر</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-navy-900 part-number-font">100%</div>
+                            <div class="text-xs sm:text-sm font-bold text-slate-700 mt-1" data-i18n="stat_2">مطابقة للمواصفات</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-amber-600 part-number-font">27</div>
+                            <div class="text-xs sm:text-sm font-bold text-slate-700 mt-1" data-i18n="stat_3">محافظة نصل إليها</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: 4 Core Pillars -->
+                <div class="lg:col-span-6 grid sm:grid-cols-2 gap-5">
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-500 transition">
+                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-amber-500 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-ship text-xl"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-navy-900 mb-2" data-i18n="pillar_1_title">استيراد مباشر</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="pillar_1_desc">
+                            نستورد مباشرة من المصانع الموثوقة بدون وسطاء لضمان أعلى جودة وأفضل سعر للتجار والمستخدم النهائي.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-500 transition">
+                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-amber-500 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-microchip text-xl"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-navy-900 mb-2" data-i18n="pillar_2_title">دقة أرقام القطع</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="pillar_2_desc">
+                            مطابقة دقيقة لأرقام القطع الأصلية (Part Numbers) لضمان التركيب المباشر دون أي تعديلات.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-500 transition">
+                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-amber-500 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-truck-fast text-xl"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-navy-900 mb-2" data-i18n="pillar_3_title">شحن سريع للمحافظات</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="pillar_3_desc">
+                            تجهيز وشحن الطلبات يومياً لكافة المحافظات والمناطق الصناعية ومواقع العمل في مصر.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-500 transition">
+                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-amber-500 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-headset text-xl"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-navy-900 mb-2" data-i18n="pillar_4_title">دعم فني متخصص</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="pillar_4_desc">
+                            فريقنا الهندسي يساعدك في تحديد البديل المناسب أو التأكد من مواصفات الفولت والمقاسات قبل الشراء.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         6. DOWNLOADS & TECHNICAL SHEETS CENTER
+         ===================================================================== -->
+    <section id="downloads" class="py-16 sm:py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-600 font-bold text-sm uppercase tracking-wider" data-i18n="dl_eyebrow">مركز المعلومات الفنية</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-navy-900 mt-1" data-i18n="dl_title">الكتالوجات ونشرات المواصفات</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base" data-i18n="dl_subtitle">
+                    استعرض واطبع قوائم المواصفات الفنية وأرقام القطع المتوفرة لدينا بصيغة جاهزة للطباعة أو الحفظ كـ PDF.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Catalog Card 1 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-file-pdf text-2xl"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-navy-900 mb-2" data-i18n="dl_card1_title">كتالوج صمامات الإيقاف والحساسات</h3>
+                        <p class="text-sm text-slate-600 mb-4" data-i18n="dl_card1_desc">
+                            يشمل جميع موديلات Woodward, Synchro-Start, Cummins, Deutz, Kubota بجهد 12V و 24V مع أبعاد التثبيت.
+                        </p>
+                    </div>
+                    <button onclick="openPrintableCatalog('solenoids')" class="w-full py-2.5 px-4 rounded-xl bg-navy-900 hover:bg-amber-600 text-white font-bold text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-print"></i>
+                        <span data-i18n="dl_btn">عرض / طباعة PDF</span>
+                    </button>
+                </div>
+
+                <!-- Catalog Card 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-file-lines text-2xl"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-navy-900 mb-2" data-i18n="dl_card2_title">دليل منظمات الجهد AVR للمولدات</h3>
+                        <p class="text-sm text-slate-600 mb-4" data-i18n="dl_card2_desc">
+                            مخططات التوصيل والمواصفات الفنية لمنظمات AS440, SX460, GAVR وكروت التحكم للمولدات.
+                        </p>
+                    </div>
+                    <button onclick="openPrintableCatalog('avr')" class="w-full py-2.5 px-4 rounded-xl bg-navy-900 hover:bg-amber-600 text-white font-bold text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-print"></i>
+                        <span data-i18n="dl_btn">عرض / طباعة PDF</span>
+                    </button>
+                </div>
+
+                <!-- Catalog Card 3 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-list-check text-2xl"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-navy-900 mb-2" data-i18n="dl_card3_title">قائمة أرقام قطع المعدات الثقيلة</h3>
+                        <p class="text-sm text-slate-600 mb-4" data-i18n="dl_card3_desc">
+                            جدول مرجعي شامل لأرقام قطع غيار محركات كاتربيلر وكامينز ودويتس ومراوح التبريد.
+                        </p>
+                    </div>
+                    <button onclick="openPrintableCatalog('all')" class="w-full py-2.5 px-4 rounded-xl bg-navy-900 hover:bg-amber-600 text-white font-bold text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-print"></i>
+                        <span data-i18n="dl_btn">عرض / طباعة PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         7. REQUEST A QUOTE (RFQ) & CONTACT SECTION
+         ===================================================================== -->
+    <section id="contact" class="py-16 sm:py-20 bg-navy-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10">
+                
+                <!-- Contact Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-amber-500 font-bold text-sm uppercase tracking-wider" data-i18n="contact_eyebrow">تواصل معنا مباشرة</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white" data-i18n="contact_title">مبيعات الجملة والقطاعي والاستفسارات الفنية</h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="contact_subtitle">
+                        فريق مبيعات المؤسسة الأفريقية للاستيراد والشركة الهندسية للديزل جاهز للرد على استفساراتكم وتوفير عروض الأسعار في أسرع وقت.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-navy-800/70 border border-slate-700/70">
+                            <div class="w-10 h-10 rounded-lg bg-amber-600/20 text-amber-500 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm" data-i18n="contact_addr_label">العنوان الرئيسي</h4>
+                                <p class="text-slate-300 text-sm mt-1" id="contact-address-display">القاهرة - جمهورية مصر العربية (يرجى تحديث العنوان التفصيلي من زر الإعدادات)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-navy-800/70 border border-slate-700/70">
+                            <div class="w-10 h-10 rounded-lg bg-amber-600/20 text-amber-500 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-phone-volume text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm" data-i18n="contact_phone_label">أرقام المبيعات والواتساب</h4>
+                                <div class="mt-1 space-y-1 text-sm text-slate-300" dir="ltr">
+                                    <div id="contact-phone1-display">+20 100 000 0000</div>
+                                    <div id="contact-phone2-display">+20 111 000 0000</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-navy-800/70 border border-slate-700/70">
+                            <div class="w-10 h-10 rounded-lg bg-amber-600/20 text-amber-500 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm" data-i18n="contact_hours_label">مواعيد العمل</h4>
+                                <p class="text-slate-300 text-sm mt-1" data-i18n="contact_hours_val">السبت إلى الخميس: 9:00 صباحاً - 6:00 مساءً</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RFQ Form Column -->
+                <div id="rfq-section" class="lg:col-span-7">
+                    <div class="bg-white text-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                        <h3 class="text-2xl font-black text-navy-900 mb-2" data-i18n="rfq_title">نموذج طلب عرض سعر سريع (RFQ)</h3>
+                        <p class="text-slate-500 text-sm mb-6" data-i18n="rfq_subtitle">أدخل بياناتك وأرقام القطع المطلوبة، وسيتم تحويل طلبك مباشرة إلى واتساب المبيعات أو البريد الإلكتروني.</p>
+
+                        <form onsubmit="submitRFQ(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1.5" data-i18n="rfq_name">الاسم بالكامل *</label>
+                                    <input type="text" id="rfq-name" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-amber-600 focus:outline-none text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1.5" data-i18n="rfq_company">اسم الشركة / الورشة</label>
+                                    <input type="text" id="rfq-company" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-amber-600 focus:outline-none text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1.5" data-i18n="rfq_phone">رقم الهاتف / واتساب *</label>
+                                    <input type="tel" id="rfq-phone" required dir="ltr" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-amber-600 focus:outline-none text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1.5" data-i18n="rfq_type">نوع الطلب</label>
+                                    <select id="rfq-type" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-amber-600 focus:outline-none text-sm bg-white">
+                                        <option value="جملة / تجار" data-i18n="rfq_opt1">طلب جملة / تجار</option>
+                                        <option value="قطاعي / صيانة" data-i18n="rfq_opt2">طلب قطاعي / صيانة</option>
+                                        <option value="مناقصة / شركات" data-i18n="rfq_opt3">توريد شركات ومصانع</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5" data-i18n="rfq_parts">أرقام القطع (Part Numbers) والكميات المطلوبة *</label>
+                                <textarea id="rfq-parts" rows="3" required placeholder="مثال: 2 قطعة صمام إيقاف 1502-12C2U1B2S1 + 1 حساس سرعة 3034572" data-i18n-placeholder="rfq_parts_ph" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-amber-600 focus:outline-none text-sm"></textarea>
+                            </div>
+
+                            <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                                <button type="submit" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                    <span data-i18n="rfq_submit_wa">إرسال الطلب عبر واتساب فوراً</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         8. FOOTER
+         ===================================================================== -->
+    <footer class="bg-navy-950 text-slate-400 border-t border-slate-800 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+            <div class="text-center md:text-start">
+                <div class="font-extrabold text-white text-base" data-i18n="footer_brand">
+                    المؤسسة الأفريقية للاستيراد | الشركة الهندسية للديزل (أولاد فؤاد)
+                </div>
+                <p class="text-xs text-slate-500 mt-1" data-i18n="footer_rights">
+                    جميع الحقوق محفوظة © 2026 - استيراد وتوزيع قطع غيار الديزل والمولدات والمعدات الثقيلة
+                </p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#home" class="hover:text-amber-500 transition" data-i18n="nav_home">الرئيسية</a>
+                <a href="#products" class="hover:text-amber-500 transition" data-i18n="nav_products">المنتجات</a>
+                <a href="#contact" class="hover:text-amber-500 transition" data-i18n="nav_contact">تواصل معنا</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         9. FLOATING WHATSAPP BUTTON
+         ===================================================================== -->
+    <button onclick="openWhatsAppGeneral()" aria-label="WhatsApp" class="fixed bottom-6 end-6 z-40 bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl transition-transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
+    </button>
+
+    <!-- =====================================================================
+         10. PRODUCT DETAILS MODAL
+         ===================================================================== -->
+    <div id="product-modal" class="fixed inset-0 z-50 hidden bg-navy-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full overflow-hidden shadow-2xl border border-slate-200 animate-fade-in">
+            <div class="bg-navy-900 text-white px-6 py-4 flex justify-between items-center">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-500" id="modal-category">التصنيف</span>
+                <button onclick="closeProductModal()" class="text-slate-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-5">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded-lg bg-amber-100 text-amber-800 font-bold text-sm part-number-font mb-2" id="modal-part-number">PART-NO</span>
+                        <h3 class="text-xl sm:text-2xl font-black text-navy-900" id="modal-title">اسم المنتج</h3>
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold shrink-0" data-i18n="in_stock">متوفر بالمخزن</span>
+                </div>
+
+                <p class="text-slate-600 text-sm leading-relaxed" id="modal-desc">وصف المنتج</p>
+
+                <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                    <h4 class="font-bold text-navy-900 text-sm mb-3" data-i18n="modal_specs_title">المواصفات الفنية والتوافق:</h4>
+                    <dl class="grid grid-cols-2 gap-y-2.5 text-sm" id="modal-specs-list">
+                        <!-- Specs injected dynamically -->
+                    </dl>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                    <button id="modal-wa-btn" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span data-i18n="btn_order_wa">اطلب عرض سعر عبر واتساب</span>
+                    </button>
+                    <button onclick="closeProductModal()" class="px-5 py-3 rounded-xl border border-slate-300 text-slate-700 font-bold hover:bg-slate-100 transition text-sm" data-i18n="btn_close">
+                        إغلاق
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         11. EASY COMPANY SETTINGS MODAL (Update Phones, Address, WhatsApp)
+         ===================================================================== -->
+    <div id="settings-modal" class="fixed inset-0 z-50 hidden bg-navy-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
+            <div class="bg-navy-900 text-white px-6 py-4 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-gear text-amber-500"></i>
+                    <h3 class="font-bold text-base">تخصيص بيانات شركتك (تُحفظ تلقائياً)</h3>
+                </div>
+                <button onclick="closeSettingsModal()" class="text-slate-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <form onsubmit="saveCompanySettings(event)" class="p-6 space-y-4 text-sm">
+                <p class="text-slate-500 text-xs">أدخل أرقام هواتفك وعنوانك الحقيقي هنا ليتم تحديثها فوراً في جميع أزرار الواتساب والاتصال بالموقع:</p>
+                
+                <div>
+                    <label class="block font-bold text-slate-700 mb-1">رقم الواتساب لاستقبال الطلبات (بالصيغة الدولية بدون +)</label>
+                    <input type="text" id="set-whatsapp" placeholder="201000000000" dir="ltr" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 focus:border-amber-600 focus:outline-none">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">هاتف المبيعات 1</label>
+                        <input type="text" id="set-phone1" placeholder="+20 100 000 0000" dir="ltr" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 focus:border-amber-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">هاتف المبيعات 2</label>
+                        <input type="text" id="set-phone2" placeholder="+20 111 000 0000" dir="ltr" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 focus:border-amber-600 focus:outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-bold text-slate-700 mb-1">البريد الإلكتروني</label>
+                    <input type="email" id="set-email" placeholder="sales@sbafricanimport.com" dir="ltr" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 focus:border-amber-600 focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block font-bold text-slate-700 mb-1">العنوان (بالعربية)</label>
+                    <input type="text" id="set-address-ar" placeholder="القاهرة - جمهورية مصر العربية" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 focus:border-amber-600 focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block font-bold text-slate-700 mb-1">Address (in English)</label>
+                    <input type="text" id="set-address-en" placeholder="Cairo, Egypt" dir="ltr" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 focus:border-amber-600 focus:outline-none">
+                </div>
+
+                <div class="flex justify-end gap-2 pt-2">
+                    <button type="button" onclick="closeSettingsModal()" class="px-4 py-2 rounded-xl border border-slate-300 font-bold text-slate-700">إلغاء</button>
+                    <button type="submit" class="px-5 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold">حفظ وتطبيق التغييرات</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         12. PRINTABLE PDF CATALOG SHEET CONTAINER
+         ===================================================================== -->
+    <div id="printable-sheet" class="hidden">
+        <!-- Populated dynamically when user clicks Print/PDF in Downloads section -->
+    </div>
+
+    <!-- =====================================================================
+         JAVASCRIPT APPLICATION LOGIC
+         ===================================================================== -->
+    <script>
+        // 1. COMPANY CONFIGURATION (Editable via UI Modal or directly here)
+        const defaultConfig = {
+            whatsappNumber: "201000000000", // ضع رقم الواتساب هنا بالصيغة الدولية بدون علامة +
+            phone1: "+20 100 000 0000",
+            phone2: "+20 111 000 0000",
+            email: "sales@sbafricanimport.com",
+            addressAr: "القاهرة - جمهورية مصر العربية (توصيل لجميع المحافظات)",
+            addressEn: "Cairo, Egypt (Nationwide Delivery Available)"
+        };
+
+        let companyConfig = { ...defaultConfig };
+        try {
+            const savedConfig = JSON.parse(localStorage.getItem('sb_african_config') || 'null');
+            if (savedConfig && typeof savedConfig === 'object') companyConfig = { ...defaultConfig, ...savedConfig };
+        } catch (error) {
+            // Storage may be disabled or contain invalid data; use the defaults.
+        }
+        let currentLang = 'ar';
+        let currentCategory = 'all';
+
+        // 2. SPARE PARTS CATALOG DATABASE
+        const productsData = [
+            {
+                id: 1,
+                category: 'solenoids',
+                partNumber: '1502-12C2U1B2S1',
+                altPartNumber: '1500-2009 / 1502-24C2U1B2S1',
+                brand: 'Woodward / Synchro-Start',
+                voltage: '12V / 24V DC',
+                icon: 'fa-bolt',
+                nameAr: 'صمام إيقاف الوقود (Stop Solenoid)',
+                nameEn: 'Heavy Duty Fuel Shutoff Solenoid',
+                descAr: 'صمام إيقاف وقود مزدوج الملف (سحب وتثبيت) عالي التحمل لمحركات الديزل والمولدات الكهربائية، مقاوم للحرارة والاهتزازات.',
+                descEn: 'Dual-coil (Pull & Hold) heavy-duty fuel shutoff solenoid for diesel engines and generators. High thermal and vibration resistance.',
+                specs: [
+                    { labelAr: 'الجهد الكهربائي', labelEn: 'Voltage', val: '12V DC / 24V DC' },
+                    { labelAr: 'قوة السحب', labelEn: 'Pull Force', val: '44 - 53 N' },
+                    { labelAr: 'التوصيل', labelEn: 'Terminals', val: '3-Pin Heavy Duty' },
+                    { labelAr: 'التوافق', labelEn: 'Compatibility', val: 'Diesel Generators & Engines' }
+                ]
+            },
+            {
+                id: 2,
+                category: 'sensors',
+                partNumber: '3034572',
+                altPartNumber: 'MPU 5/8-18 UNF',
+                brand: 'Cummins / Universal',
+                voltage: 'AC Pulse Output',
+                icon: 'fa-wave-square',
+                nameAr: 'حساس سرعة المحرك المغناطيسي (Magnetic Pickup)',
+                nameEn: 'Magnetic Pickup Speed Sensor (MPU)',
+                descAr: 'حساس قياس سرعة دوران المحرك (RPM) يركب على الحدافة، مصنوع من الستانلس ستيل المقاوم للصدأ ليعطي إشارة دقيقة لوحة التحكم.',
+                descEn: 'Stainless steel magnetic speed sensor mounted on the flywheel housing to deliver accurate RPM pulses to controllers and governors.',
+                specs: [
+                    { labelAr: 'مقاس السن', labelEn: 'Thread Size', val: '5/8 - 18 UNF' },
+                    { labelAr: 'الطول الكلي', labelEn: 'Total Length', val: '80 mm' },
+                    { labelAr: 'نطاق الحرارة', labelEn: 'Temp Range', val: '-55°C to +105°C' },
+                    { labelAr: 'التوافق', labelEn: 'Compatibility', val: 'Cummins & Generator Sets' }
+                ]
+            },
+            {
+                id: 3,
+                category: 'avr',
+                partNumber: 'AS440',
+                altPartNumber: 'E000-24403 / SX440',
+                brand: 'Stamford / Universal',
+                voltage: '100-264V AC',
+                icon: 'fa-microchip',
+                nameAr: 'منظم الجهد الأوتوماتيكي للمولدات (AVR)',
+                nameEn: 'Automatic Voltage Regulator (AVR)',
+                descAr: 'كارت تنظيم جهد المولدات الكهربائية بدون فرش (Brushless) مزود بحماية ضد انخفاض السرعة (UFRO) واستقرار فائق للجهد.',
+                descEn: 'Half-wave phase-controlled thyristor type AVR for brushless generators with Under-Frequency Roll-Off (UFRO) protection.',
+                specs: [
+                    { labelAr: 'جهد الدخل', labelEn: 'Sensing Input', val: '100-264V AC 1-Phase' },
+                    { labelAr: 'نسبة التنظيم', labelEn: 'Regulation', val: '+/- 1.0%' },
+                    { labelAr: 'تيار الخرج', labelEn: 'Max Current', val: '4A Continuous (6A Intermittent)' },
+                    { labelAr: 'التوافق', labelEn: 'Compatibility', val: 'Stamford & Brushless Alternators' }
+                ]
+            },
+            {
+                id: 4,
+                category: 'solenoids',
+                partNumber: '1751ES / SA-3725',
+                altPartNumber: '1751-12E7U1B1S5A',
+                brand: 'Deutz / Kubota / Woodward',
+                voltage: '12V / 24V DC',
+                icon: 'fa-gas-pump',
+                nameAr: 'سولينويد إيقاف ديزل (1751ES)',
+                nameEn: 'Diesel Engine Stop Solenoid 1751ES',
+                descAr: 'صمام إيقاف وقود قياسي لمحركات دويتس وكوبوتا ومعدات البناء، مزود بعمود سحب مقوى وملف نحاسي نقي.',
+                descEn: 'Standard stop solenoid for Deutz, Kubota, and construction machinery engines featuring pure copper windings.',
+                specs: [
+                    { labelAr: 'الجهد الكهربائي', labelEn: 'Voltage', val: '12V DC / 24V DC' },
+                    { labelAr: 'نوع التثبيت', labelEn: 'Mounting', val: '2-Bolt Flange' },
+                    { labelAr: 'التطبيق', labelEn: 'Application', val: 'Deutz, Kubota, Yanmar' },
+                    { labelAr: 'الحالة', labelEn: 'Condition', val: 'Brand New OEM Spec' }
+                ]
+            },
+            {
+                id: 5,
+                category: 'engine',
+                partNumber: 'CAT-FAN-HD',
+                altPartNumber: 'Cummins / Caterpillar Blade',
+                brand: 'Caterpillar / Cummins',
+                voltage: 'Mechanical',
+                icon: 'fa-fan',
+                nameAr: 'مروحة تبريد ريداتير للمحركات الثقيلة',
+                nameEn: 'Heavy Duty Radiator Cooling Fan',
+                descAr: 'مروحة تبريد عالية الكفاءة مصممة لتدفق هواء فائق لتبريد محركات الديزل والمولدات والمعدات الثقيلة في الأجواء الحارة.',
+                descEn: 'High-efficiency reinforced cooling fan engineered for maximum airflow in high ambient temperatures for diesel generators and heavy machinery.',
+                specs: [
+                    { labelAr: 'الخامة', labelEn: 'Material', val: 'Reinforced Polyamide / Steel Hub' },
+                    { labelAr: 'الاتجاه', labelEn: 'Airflow', val: 'Blower / Suction Available' },
+                    { labelAr: 'التوازن', labelEn: 'Balancing', val: 'Dynamically Balanced' },
+                    { labelAr: 'التوافق', labelEn: 'Compatibility', val: 'CAT, Cummins, Perkins' }
+                ]
+            },
+            {
+                id: 6,
+                category: 'sensors',
+                partNumber: 'VDO-OP-WT',
+                altPartNumber: '1/8 NPT / M10x1',
+                brand: 'VDO / Akel / Universal',
+                voltage: '6V - 24V DC',
+                icon: 'fa-gauge-high',
+                nameAr: 'حساس ضغط الزيت وحرارة المياه (VDO)',
+                nameEn: 'Oil Pressure & Water Temp Sensor',
+                descAr: 'حساسات قياس وإنذار ضغط الزيت ودرجة حرارة مياه التبريد لحماية محركات الديزل من التلف المفاجئ.',
+                descEn: 'Precision oil pressure and coolant temperature senders/switches to protect diesel engines against overheating and low oil pressure.',
+                specs: [
+                    { labelAr: 'نطاق الضغط', labelEn: 'Pressure Range', val: '0 - 10 Bar' },
+                    { labelAr: 'نطاق الحرارة', labelEn: 'Temp Range', val: '40°C - 120°C' },
+                    { labelAr: 'السن المتوفر', labelEn: 'Threads', val: '1/8-27 NPT, M10x1, M14x1.5' },
+                    { labelAr: 'التوافق', labelEn: 'Compatibility', val: 'All Diesel Generators & Trucks' }
+                ]
+            },
+            {
+                id: 7,
+                category: 'avr',
+                partNumber: 'SX460',
+                altPartNumber: 'E000-24602',
+                brand: 'Stamford / Mecc Alte Comp.',
+                voltage: '95-132V / 190-264V',
+                icon: 'fa-sliders',
+                nameAr: 'منظم جهد مولدات كهربائية (SX460)',
+                nameEn: 'SX460 Automatic Voltage Regulator',
+                descAr: 'المنظم الأكثر انتشاراً للمولدات المتوسطة والصغيرة، يتميز بسهولة التركيب وثبات الأداء مع الأحمال المتغيرة.',
+                descEn: 'Industry-standard AVR for brushless alternators up to 150kVA, offering reliable voltage stability under variable loads.',
+                specs: [
+                    { labelAr: 'اختيار الجهد', labelEn: 'Jumper Select', val: '110V or 220V AC' },
+                    { labelAr: 'التردد', labelEn: 'Frequency', val: '50 / 60 Hz' },
+                    { labelAr: 'تيار الإثارة', labelEn: 'Field Current', val: 'Max 4A DC' },
+                    { labelAr: 'التوافق', labelEn: 'Compatibility', val: 'Stamford UCI / UC22 / UC27' }
+                ]
+            },
+            {
+                id: 8,
+                category: 'solenoids',
+                partNumber: 'SA-4562-T',
+                altPartNumber: '1503ES-24S5SUC5S',
+                brand: 'Woodward / Akel',
+                voltage: '24V DC',
+                icon: 'fa-plug-circle-bolt',
+                nameAr: 'بلف إيقاف وقود 24 فولت (3 أطراف)',
+                nameEn: '24V DC 3-Wire Fuel Shutoff Solenoid',
+                descAr: 'صمام إيقاف وقود 24 فولت مخصص للمولدات الكبيرة والشاحنات والمعدات الثقيلة بقدرة تحمل مستمرة.',
+                descEn: 'Heavy-duty 24V DC 3-wire solenoid designed for large diesel generators, trucks, and earthmoving equipment.',
+                specs: [
+                    { labelAr: 'الجهد الكهربائي', labelEn: 'Voltage', val: '24V DC' },
+                    { labelAr: 'نوع التشغيل', labelEn: 'Operation', val: 'Continuous Duty Hold Coil' },
+                    { labelAr: 'الحماية', labelEn: 'Protection', val: 'Dust & Oil Sealed Boot' },
+                    { labelAr: 'التوافق', labelEn: 'Compatibility', val: 'Heavy Machinery & Generators' }
+                ]
+            }
+        ];
+
+        // 3. TRANSLATIONS DICTIONARY (ARABIC / ENGLISH)
+        const i18n = {
+            ar: {
+                topbar_address: "القاهرة - جمهورية مصر العربية (توصيل لجميع المحافظات)",
+                topbar_badge: "استيراد وتوزيع جملة وقطاعي",
+                btn_customize: "تعديل البيانات",
+                brand_primary: "المؤسسة الأفريقية للاستيراد",
+                brand_secondary: "الشركة الهندسية للديزل (أولاد فؤاد)",
+                nav_home: "الرئيسية",
+                nav_about: "من نحن",
+                nav_products: "كتالوج المنتجات",
+                nav_downloads: "مركز التحميل",
+                nav_contact: "تواصل معنا",
+                nav_rfq: "اطلب عرض سعر",
+                hero_badge: "SB African Import & Engineering Diesel Co. (Awlad Fouad)",
+                hero_title: "الريادة في استيراد وتوزيع قطع غيار محركات الديزل والمولدات والمعدات الثقيلة",
+                hero_subtitle: "نوفر أحدث حلول قطع الغيار الأصلية والبديلة عالية الجودة (OEM & Aftermarket) لكبرى العلامات التجارية العالمية: صمامات إيقاف الوقود، الحساسات، منظمات الجهد، وأجزاء المحركات بأفضل الأسعار في مصر.",
+                hero_search_placeholder: "ابحث برقم القطعة (مثال: 1502-12C2U1B2S1, 3034572, AS440)...",
+                hero_search_btn: "بحث سريع",
+                hero_popular: "أرقام شائعة:",
+                hero_card_tag: "تخصصنا الدقيق",
+                hero_card_title: "حلول متكاملة للمولدات والمعدات",
+                hero_feat_1: "صمامات إيقاف الوقود (Stop Solenoids) 12V & 24V لكافة المحركات",
+                hero_feat_2: "حساسات السرعة (Magnetic Pickups) والضغط والحرارة",
+                hero_feat_3: "منظمات الجهد (AVR) وكروت التحكم للمولدات الكهربائية",
+                hero_feat_4: "مراوح التبريد وقطع غيار محركات الديزل الثقيلة",
+                hero_btn_catalog: "تصفح الكتالوج",
+                hero_btn_whatsapp: "تواصل واتساب",
+                brands_label: "قطع متوافقة مع:",
+                cat_eyebrow: "الكتالوج الإلكتروني المتكامل",
+                cat_title: "قطع غيار محركات الديزل والمولدات",
+                cat_subtitle: "ابحث برقم القطعة (Part Number) أو اختر التصنيف المناسب لاستعراض المواصفات الفنية وطلب عرض سعر فوري عبر واتساب.",
+                cat_all: "الكل",
+                cat_solenoids: "صمامات إيقاف الوقود",
+                cat_sensors: "حساسات السرعة والحرارة",
+                cat_avr: "منظمات الجهد والتحكم",
+                cat_engine: "مراوح وأجزاء المحرك",
+                cat_search_placeholder: "فلترة برقم القطعة أو الماركة...",
+                no_results_title: "لم يتم العثور على قطعة مطابقة",
+                no_results_desc: "لا تقلق! نوفر جميع الأرقام بالطلب المباشر. أرسل لنا رقم القطعة وسنوافيك بالسعر فوراً.",
+                no_results_btn: "اسأل عن القطعة عبر واتساب",
+                about_badge: "خبرة وثقة في السوق المصري",
+                about_title: "المؤسسة الأفريقية للاستيراد والشركة الهندسية للديزل (أولاد فؤاد)",
+                about_p1: "نحن كيان متخصص في استيراد وتوزيع قطع غيار محركات الديزل، المولدات الكهربائية، والمعدات الثقيلة في جمهورية مصر العربية. نجمع بين قوة الاستيراد المباشر من كبرى المصانع المعتمدة عالمياً وبين الخبرة الهندسية والفنية العميقة لتلبية احتياجات المصانع، شركات المقاولات، مراكز الصيانة، والتجار.",
+                about_p2: "نلتزم بتوفير قطع الغيار الدقيقة (مثل صمامات الإيقاف، الحساسات المغناطيسية، منظمات الجهد، ومكونات التبريد) بمطابقة تامة للمواصفات القياسية (OEM Specifications) وبأسعار تنافسية للجملة والقطاعي.",
+                stat_1: "رقم قطعة متوفر",
+                stat_2: "مطابقة للمواصفات",
+                stat_3: "محافظة نصل إليها",
+                pillar_1_title: "استيراد مباشر",
+                pillar_1_desc: "نستورد مباشرة من المصانع الموثوقة بدون وسطاء لضمان أعلى جودة وأفضل سعر للتجار والمستخدم النهائي.",
+                pillar_2_title: "دقة أرقام القطع",
+                pillar_2_desc: "مطابقة دقيقة لأرقام القطع الأصلية (Part Numbers) لضمان التركيب المباشر دون أي تعديلات.",
+                pillar_3_title: "شحن سريع للمحافظات",
+                pillar_3_desc: "تجهيز وشحن الطلبات يومياً لكافة المحافظات والمناطق الصناعية ومواقع العمل في مصر.",
+                pillar_4_title: "دعم فني متخصص",
+                pillar_4_desc: "فريقنا الهندسي يساعدك في تحديد البديل المناسب والتأكد من المواصفات قبل الشراء.",
+                dl_eyebrow: "مركز المعلومات الفنية",
+                dl_title: "الكتالوجات ونشرات المواصفات",
+                dl_subtitle: "استعرض واطبع قوائم المواصفات الفنية وأرقام القطع بصيغة جاهزة للطباعة أو الحفظ كـ PDF.",
+                dl_card1_title: "كتالوج صمامات الإيقاف والحساسات",
+                dl_card1_desc: "موديلات متعددة من صمامات الإيقاف والحساسات بجهد 12V و24V.",
+                dl_card2_title: "دليل منظمات الجهد AVR للمولدات",
+                dl_card2_desc: "مواصفات منظمات AS440 وSX460 وكروت التحكم للمولدات.",
+                dl_card3_title: "قائمة أرقام قطع المعدات الثقيلة",
+                dl_card3_desc: "قائمة مرجعية لأرقام قطع غيار المحركات ومراوح التبريد.",
+                dl_btn: "عرض / طباعة PDF",
+                contact_eyebrow: "تواصل معنا مباشرة",
+                contact_title: "مبيعات الجملة والقطاعي والاستفسارات الفنية",
+                contact_subtitle: "فريق المبيعات جاهز للرد على استفساراتكم وتوفير عروض الأسعار.",
+                contact_addr_label: "العنوان الرئيسي",
+                contact_phone_label: "أرقام المبيعات والواتساب",
+                contact_hours_label: "مواعيد العمل",
+                contact_hours_val: "السبت إلى الخميس: 9:00 صباحاً - 6:00 مساءً",
+                rfq_title: "نموذج طلب عرض سعر سريع (RFQ)",
+                rfq_subtitle: "أدخل بياناتك وأرقام القطع المطلوبة، وسيتم تحويل طلبك مباشرة إلى واتساب المبيعات.",
+                rfq_name: "الاسم بالكامل *",
+                rfq_company: "اسم الشركة / الورشة",
+                rfq_phone: "رقم الهاتف / واتساب *",
+                rfq_type: "نوع الطلب",
+                rfq_opt1: "طلب جملة / تجار",
+                rfq_opt2: "طلب قطاعي / صيانة",
+                rfq_opt3: "توريد شركات ومصانع",
+                rfq_parts: "أرقام القطع (Part Numbers) والكميات المطلوبة *",
+                rfq_parts_ph: "مثال: 2 قطعة صمام إيقاف 1502-12C2U1B2S1 + 1 حساس سرعة 3034572",
+                rfq_submit_wa: "إرسال الطلب عبر واتساب فوراً",
+                in_stock: "متوفر بالمخزن",
+                modal_specs_title: "المواصفات الفنية والتوافق:",
+                btn_order_wa: "اطلب عرض سعر عبر واتساب",
+                btn_close: "إغلاق",
+                footer_brand: "المؤسسة الأفريقية للاستيراد | الشركة الهندسية للديزل (أولاد فؤاد)",
+                footer_rights: "جميع الحقوق محفوظة © 2026 - استيراد وتوزيع قطع غيار الديزل والمولدات والمعدات الثقيلة"
+            },
+            en: {
+                topbar_badge: "Wholesale and retail import & distribution",
+                btn_customize: "Edit company details",
+                brand_primary: "SB African Import",
+                brand_secondary: "Engineering Diesel Co. (Awlad Fouad)",
+                nav_home: "Home", nav_about: "About", nav_products: "Product catalog",
+                nav_downloads: "Downloads", nav_contact: "Contact", nav_rfq: "Request a quote",
+                hero_badge: "SB African Import & Engineering Diesel Co. (Awlad Fouad)",
+                hero_title: "Diesel engine, generator and heavy equipment spare parts",
+                hero_subtitle: "Quality OEM and aftermarket parts for leading global brands, at competitive prices in Egypt.",
+                hero_search_placeholder: "Search by part number (e.g. 1502-12C2U1B2S1, 3034572, AS440)...",
+                hero_search_btn: "Search", hero_popular: "Popular parts:",
+                hero_card_tag: "Our specialty", hero_card_title: "Generator and equipment solutions",
+                hero_feat_1: "12V and 24V fuel shutoff solenoids",
+                hero_feat_2: "Speed, pressure and temperature sensors",
+                hero_feat_3: "AVR voltage regulators and generator controllers",
+                hero_feat_4: "Cooling fans and heavy-duty diesel engine parts",
+                hero_btn_catalog: "Browse catalog", hero_btn_whatsapp: "Contact on WhatsApp",
+                brands_label: "Compatible with:", cat_eyebrow: "Online catalog", cat_title: "Diesel engine and generator parts",
+                cat_subtitle: "Search by part number or choose a category to view details and request a quote.",
+                cat_all: "All", cat_solenoids: "Fuel solenoids", cat_sensors: "Sensors",
+                cat_avr: "AVR and controls", cat_engine: "Fans and engine parts",
+                cat_search_placeholder: "Filter by part number or brand...",
+                no_results_title: "No matching part found",
+                no_results_desc: "Send us the part number and we will check availability and pricing.",
+                no_results_btn: "Ask about this part on WhatsApp",
+                about_badge: "Experience and trust in the Egyptian market", about_title: "SB African Import & Engineering Diesel Co. (Awlad Fouad)",
+                about_p1: "We import and distribute spare parts for diesel engines, generators and heavy equipment in Egypt, serving factories, contractors, service centers and traders.",
+                about_p2: "We supply precision parts to OEM specifications at competitive wholesale and retail prices.",
+                stat_1: "Parts available", stat_2: "Specification compliant", stat_3: "Governorates served",
+                pillar_1_title: "Direct importing", pillar_1_desc: "Sourcing from trusted manufacturers for quality and value.",
+                pillar_2_title: "Accurate part numbers", pillar_2_desc: "Careful part-number matching for a reliable fit.",
+                pillar_3_title: "Nationwide delivery", pillar_3_desc: "Daily order preparation and shipping across Egypt.",
+                pillar_4_title: "Technical support", pillar_4_desc: "Our team can help confirm suitable parts and specifications.",
+                dl_eyebrow: "Technical information", dl_title: "Catalogs and specification sheets",
+                dl_subtitle: "Browse and print technical specifications and available part numbers.",
+                dl_card1_title: "Solenoids and sensors catalog", dl_card1_desc: "Solenoid and sensor models in 12V and 24V.",
+                dl_card2_title: "Generator AVR guide", dl_card2_desc: "Specifications for AS440, SX460 and generator control boards.",
+                dl_card3_title: "Heavy equipment part numbers", dl_card3_desc: "Reference list for engine parts and cooling fans.",
+                dl_btn: "View / Print PDF", contact_eyebrow: "Contact us", contact_title: "Wholesale, retail and technical inquiries",
+                contact_subtitle: "Our sales team is ready to answer questions and provide quotations.",
+                contact_addr_label: "Main address", contact_phone_label: "Sales and WhatsApp numbers",
+                contact_hours_label: "Business hours", contact_hours_val: "Saturday to Thursday: 9:00 AM - 6:00 PM",
+                rfq_title: "Quick request for quotation (RFQ)", rfq_subtitle: "Enter your details and requested part numbers to send your request via WhatsApp.",
+                rfq_name: "Full name *", rfq_company: "Company / workshop", rfq_phone: "Phone / WhatsApp *",
+                rfq_type: "Request type", rfq_opt1: "Wholesale / trader", rfq_opt2: "Retail / maintenance",
+                rfq_opt3: "Company / factory supply", rfq_parts: "Part numbers and quantities *",
+                rfq_parts_ph: "Example: 2 x 1502-12C2U1B2S1 solenoid + 1 x 3034572 speed sensor",
+                rfq_submit_wa: "Send request via WhatsApp", in_stock: "In stock",
+                modal_specs_title: "Technical specifications and compatibility:",
+                btn_order_wa: "Request a WhatsApp quote", btn_close: "Close",
+                footer_brand: "SB African Import | Engineering Diesel Co. (Awlad Fouad)",
+                footer_rights: "All rights reserved © 2026 - Diesel, generator and heavy equipment parts"
+            }
+        };
+
+        const categoryLabels = {
+            solenoids: ['صمامات إيقاف الوقود', 'Fuel solenoids'],
+            sensors: ['حساسات السرعة والحرارة', 'Speed and temperature sensors'],
+            avr: ['منظمات الجهد والتحكم', 'AVR and controls'],
+            engine: ['مراوح وأجزاء المحرك', 'Fans and engine parts']
+        };
+
+        function escapeHtml(value) {
+            return String(value ?? '').replace(/[&<>"']/g, char => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            })[char]);
+        }
+
+        function applyTranslations() {
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.dataset.i18n;
+                const value = i18n[currentLang][key] || i18n.ar[key];
+                if (value) element.textContent = value;
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                const key = element.dataset.i18nPlaceholder;
+                const value = i18n[currentLang][key] || i18n.ar[key];
+                if (value) element.placeholder = value;
+            });
+            const toggle = document.getElementById('lang-toggle-text');
+            if (toggle) toggle.textContent = currentLang === 'ar' ? 'English' : 'العربية';
+            const address = document.getElementById('topbar-address-text');
+            if (address) address.textContent = currentLang === 'ar'
+                ? (companyConfig.addressAr || defaultConfig.addressAr)
+                : (companyConfig.addressEn || defaultConfig.addressEn);
+            const contactAddress = document.getElementById('contact-address-display');
+            if (contactAddress) contactAddress.textContent = currentLang === 'ar'
+                ? (companyConfig.addressAr || defaultConfig.addressAr)
+                : (companyConfig.addressEn || defaultConfig.addressEn);
+            filterProducts();
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            applyTranslations();
+        }
+
+        function renderProducts(list) {
+            const grid = document.getElementById('products-grid');
+            const empty = document.getElementById('no-products-msg');
+            if (!grid || !empty) return;
+            grid.innerHTML = list.map(product => {
+                const name = currentLang === 'ar' ? product.nameAr : product.nameEn;
+                const description = currentLang === 'ar' ? product.descAr : product.descEn;
+                return `<article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition overflow-hidden">
+                    <div class="h-32 bg-navy-900 text-amber-500 flex items-center justify-center"><i class="fa-solid ${escapeHtml(product.icon)} text-5xl"></i></div>
+                    <div class="p-5">
+                        <div class="text-xs text-slate-500 mb-2">${escapeHtml(product.brand)}</div>
+                        <div class="font-bold text-amber-700 part-number-font mb-2">${escapeHtml(product.partNumber)}</div>
+                        <h3 class="font-extrabold text-navy-900 leading-snug mb-2">${escapeHtml(name)}</h3>
+                        <p class="text-sm text-slate-600 line-clamp-3 mb-4">${escapeHtml(description)}</p>
+                        <button type="button" onclick="openProductModal(${Number(product.id)})" class="w-full py-2.5 rounded-xl bg-navy-900 hover:bg-amber-600 text-white font-bold text-sm transition">${currentLang === 'ar' ? 'عرض التفاصيل' : 'View details'}</button>
+                    </div>
+                </article>`;
+            }).join('');
+            empty.classList.toggle('hidden', list.length !== 0);
+            grid.classList.toggle('hidden', list.length === 0);
+        }
+
+        function filterProducts() {
+            const search = (document.getElementById('catalog-search')?.value || '').trim().toLowerCase();
+            const filtered = productsData.filter(product => {
+                const matchesCategory = currentCategory === 'all' || product.category === currentCategory;
+                const haystack = [product.partNumber, product.altPartNumber, product.brand, product.nameAr, product.nameEn].join(' ').toLowerCase();
+                return matchesCategory && haystack.includes(search);
+            });
+            renderProducts(filtered);
+            document.querySelectorAll('.cat-btn').forEach(button => {
+                const active = button.dataset.cat === currentCategory;
+                button.classList.toggle('bg-navy-900', active);
+                button.classList.toggle('text-white', active);
+                button.classList.toggle('bg-slate-100', !active);
+                button.classList.toggle('text-slate-700', !active);
+            });
+        }
+
+        function setCategory(category) {
+            currentCategory = category;
+            filterProducts();
+        }
+
+        function handleHeroSearch(event) {
+            event.preventDefault();
+            const query = document.getElementById('hero-search-input')?.value.trim() || '';
+            document.getElementById('catalog-search').value = query;
+            currentCategory = 'all';
+            filterProducts();
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function quickFilterPart(query) {
+            document.getElementById('hero-search-input').value = query;
+            document.getElementById('catalog-search').value = query;
+            currentCategory = 'all';
+            filterProducts();
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openProductModal(id) {
+            const product = productsData.find(item => item.id === Number(id));
+            if (!product) return;
+            document.getElementById('modal-category').textContent = categoryLabels[product.category]?.[currentLang === 'ar' ? 0 : 1] || product.category;
+            document.getElementById('modal-part-number').textContent = product.partNumber;
+            document.getElementById('modal-title').textContent = currentLang === 'ar' ? product.nameAr : product.nameEn;
+            document.getElementById('modal-desc').textContent = currentLang === 'ar' ? product.descAr : product.descEn;
+            document.getElementById('modal-specs-list').innerHTML = product.specs.map(spec =>
+                `<dt class="font-bold text-slate-700">${escapeHtml(currentLang === 'ar' ? spec.labelAr : spec.labelEn)}</dt><dd class="text-slate-600">${escapeHtml(spec.val)}</dd>`
+            ).join('');
+            document.getElementById('modal-wa-btn').onclick = () => openWhatsApp(`طلب عرض سعر للقطعة ${product.partNumber}`);
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function closeProductModal() { document.getElementById('product-modal').classList.add('hidden'); }
+        function openSettingsModal() {
+            document.getElementById('set-whatsapp').value = companyConfig.whatsappNumber || '';
+            document.getElementById('set-phone1').value = companyConfig.phone1 || '';
+            document.getElementById('set-phone2').value = companyConfig.phone2 || '';
+            document.getElementById('set-email').value = companyConfig.email || '';
+            document.getElementById('set-address-ar').value = companyConfig.addressAr || '';
+            document.getElementById('set-address-en').value = companyConfig.addressEn || '';
+            document.getElementById('settings-modal').classList.remove('hidden');
+        }
+        function closeSettingsModal() { document.getElementById('settings-modal').classList.add('hidden'); }
+
+        function saveCompanySettings(event) {
+            event.preventDefault();
+            companyConfig = {
+                whatsappNumber: document.getElementById('set-whatsapp').value.replace(/\D/g, ''),
+                phone1: document.getElementById('set-phone1').value.trim(),
+                phone2: document.getElementById('set-phone2').value.trim(),
+                email: document.getElementById('set-email').value.trim(),
+                addressAr: document.getElementById('set-address-ar').value.trim(),
+                addressEn: document.getElementById('set-address-en').value.trim()
+            };
+            try { localStorage.setItem('sb_african_config', JSON.stringify(companyConfig)); } catch (error) { /* Storage may be unavailable. */ }
+            updateCompanyDetails();
+            closeSettingsModal();
+        }
+
+        function updateCompanyDetails() {
+            const phone1 = companyConfig.phone1 || defaultConfig.phone1;
+            const phone2 = companyConfig.phone2 || defaultConfig.phone2;
+            const email = companyConfig.email || defaultConfig.email;
+            const topPhone = document.getElementById('topbar-phone-text');
+            topPhone.textContent = phone1;
+            document.getElementById('topbar-phone-link').href = `tel:${phone1.replace(/[^\d+]/g, '')}`;
+            document.getElementById('topbar-email-text').textContent = email;
+            document.getElementById('topbar-email-link').href = `mailto:${email}`;
+            document.getElementById('contact-phone1-display').textContent = phone1;
+            document.getElementById('contact-phone2-display').textContent = phone2;
+            applyTranslations();
+        }
+
+        function openWhatsApp(message) {
+            const number = (companyConfig.whatsappNumber || defaultConfig.whatsappNumber).replace(/\D/g, '');
+            window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+        }
+        function openWhatsAppGeneral() {
+            openWhatsApp(currentLang === 'ar' ? 'مرحباً، أود الاستفسار عن قطع غيار الديزل والمولدات.' : 'Hello, I would like to ask about diesel and generator spare parts.');
+        }
+        function openWhatsAppCustomPart() {
+            const query = document.getElementById('catalog-search')?.value || document.getElementById('hero-search-input')?.value || '';
+            openWhatsApp(`${currentLang === 'ar' ? 'أرغب في الاستفسار عن قطعة الغيار:' : 'I would like to ask about this spare part:'} ${query}`);
+        }
+        function submitRFQ(event) {
+            event.preventDefault();
+            const message = [
+                currentLang === 'ar' ? 'طلب عرض سعر جديد' : 'New quotation request',
+                `${currentLang === 'ar' ? 'الاسم' : 'Name'}: ${document.getElementById('rfq-name').value}`,
+                `${currentLang === 'ar' ? 'الشركة' : 'Company'}: ${document.getElementById('rfq-company').value || '-'}`,
+                `${currentLang === 'ar' ? 'الهاتف' : 'Phone'}: ${document.getElementById('rfq-phone').value}`,
+                `${currentLang === 'ar' ? 'نوع الطلب' : 'Request type'}: ${document.getElementById('rfq-type').selectedOptions[0].text}`,
+                `${currentLang === 'ar' ? 'القطع والكميات' : 'Parts and quantities'}: ${document.getElementById('rfq-parts').value}`
+            ].join('\n');
+            openWhatsApp(message);
+        }
+
+        function openPrintableCatalog(category) {
+            const products = category === 'all' ? productsData : productsData.filter(product => product.category === category);
+            const sheet = document.getElementById('printable-sheet');
+            const title = currentLang === 'ar' ? 'كتالوج قطع الغيار' : 'Spare Parts Catalog';
+            sheet.innerHTML = `<div style="font-family:Arial,sans-serif;direction:${currentLang === 'ar' ? 'rtl' : 'ltr'};color:#111;padding:24px">
+                <h1 style="font-size:24px;margin-bottom:8px">${title}</h1>
+                <p>${currentLang === 'ar' ? 'المؤسسة الأفريقية للاستيراد | الشركة الهندسية للديزل (أولاد فؤاد)' : 'SB African Import | Engineering Diesel Co. (Awlad Fouad)'}</p>
+                <table style="width:100%;border-collapse:collapse;margin-top:20px"><thead><tr>
+                <th style="border:1px solid #999;padding:8px">${currentLang === 'ar' ? 'رقم القطعة' : 'Part number'}</th>
+                <th style="border:1px solid #999;padding:8px">${currentLang === 'ar' ? 'اسم المنتج' : 'Product'}</th>
+                <th style="border:1px solid #999;padding:8px">${currentLang === 'ar' ? 'الماركة' : 'Brand'}</th>
+                <th style="border:1px solid #999;padding:8px">${currentLang === 'ar' ? 'الجهد / المواصفة' : 'Voltage / spec'}</th></tr></thead><tbody>
+                ${products.map(product => `<tr><td style="border:1px solid #999;padding:8px">${escapeHtml(product.partNumber)}</td><td style="border:1px solid #999;padding:8px">${escapeHtml(currentLang === 'ar' ? product.nameAr : product.nameEn)}</td><td style="border:1px solid #999;padding:8px">${escapeHtml(product.brand)}</td><td style="border:1px solid #999;padding:8px">${escapeHtml(product.voltage)}</td></tr>`).join('')}
+                </tbody></table></div>`;
+            sheet.classList.remove('hidden');
+            window.print();
+            sheet.classList.add('hidden');
+        }
+
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') { closeProductModal(); closeSettingsModal(); }
+        });
+        updateCompanyDetails();
+        filterProducts();
+        applyTranslations();
+    </script>
+</body>
+</html>
